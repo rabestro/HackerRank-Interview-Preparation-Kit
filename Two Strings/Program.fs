@@ -9,7 +9,7 @@ let hasCommonSubstring (s1: string) (s2: string) =
     let firstSet = s1 |> Set.ofSeq
     if Seq.exists firstSet.Contains s2 then "YES" else "NO"
 
-Seq.initInfinite (fun _ -> System.Console.ReadLine())
+Seq.init (2 * testCases) (fun _ -> System.Console.ReadLine())
 |> Seq.chunkBySize 2
 |> Seq.take testCases
 |> Seq.map (fun chunk -> hasCommonSubstring chunk.[0] chunk.[1])
